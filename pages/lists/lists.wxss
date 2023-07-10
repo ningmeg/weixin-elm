@@ -1,0 +1,391 @@
+.flex {
+  display: flex;
+}
+
+.top-yi {
+  position: relative;
+  height: 150px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg');
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box-yi {
+  width: 750rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+}
+
+.ziyans {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.zixiao {
+  font-size: 12px;
+}
+
+.img-xiao {
+  width: 60px;
+  height: 60px;
+}
+
+.yuan-xiao {
+  border-radius: 10%;
+}
+
+.yuan-da {
+  border-radius: 20px;
+}
+
+.text-yi {
+  color: aliceblue;
+}
+
+.tishi {
+  width: 50px !important;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 12px !important;
+  color: aliceblue;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+}
+
+.biaoqian {
+  width: 25px;
+  height: 15px;
+}
+
+.biaozhi {
+  width: 15px;
+  height: 15px;
+}
+
+image {
+  margin-right: 10px;
+}
+
+.biaoq {
+  width: 20px;
+  height: 10px;
+}
+
+.top-er button {
+  width: 250rpx !important;
+}
+
+.tabs-yi {
+  width: 250rpx;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.weui-tabs,
+.weui-tabs-swiper,
+.tab-content,
+.test {
+  height: calc(100vh - 250px) !important;
+}
+
+.scrollSpase {
+  height: 70px;
+}
+
+.button {
+  width: 140rpx;
+}
+
+.con-yi {
+  background-color: aqua;
+}
+
+.vtabs-content-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+.bt-yi {
+  height: 30px;
+  background-color: #f4f5f7;
+  line-height: 30px;
+  border-left: #dbdee2 3px solid;
+  padding-left: 10px;
+  font-size: 14px !important;
+}
+
+.base {
+  width: 750rpx;
+  height: 60px;
+  background-color: #141c27;
+  position: absolute;
+  bottom: 0;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.gwuche {
+  width: 30px;
+  height: 30px;
+}
+
+.buttonyuan {
+  width: 50px !important;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2977c5;
+  margin-top: -25px;
+  align-self: flex-start;
+  border: 5px #000 solid;
+}
+
+.button-er {
+  width: 135px !important;
+  height: 60px;
+  background-color: #2b343d;
+  color: #93979b;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 50px;
+  align-self: flex-start;
+  margin-right: 20px !important;
+}
+
+.contae {
+  font-size: 14px;
+}
+
+.text-da {
+  font-size: 18px;
+}
+
+.textdi {
+  font-size: 10px;
+  color: #afb2b5;
+}
+
+.lists-yi {
+  height: 100px;
+  border-bottom: 1px #afb2b5 solid;
+  box-sizing: border-box;
+  padding: 15px 10px 0 15px;
+}
+
+.flex.lists-yi:hover {
+  background-color: #afb2b5;
+
+}
+
+.flex.lists-yi:hover text {
+  color: #000;
+}
+
+.weui-vtabs-bar__item {
+  border-left: none !important;
+}
+
+.buttonxiaoyuan {
+  padding: 0 !important;
+  width: 20px !important;
+  height: 20px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  text-align: center !important;
+}
+
+.dingbu {
+  width: 750rpx;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  line-height: 30px;
+}
+
+.dingbu button {
+  width: 20px;
+  height: 20px;
+  padding: 0 !important;
+  background-color: transparent;
+  color: #f4f5f7;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.wrap {
+  width: 750rpx;
+  position: absolute;
+  text-align: center;
+  padding: 0 !important;
+}
+
+.wrap text {
+  line-height: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/*CSS伪类用法*/
+.wrap text:after,
+.wrap text:before {
+  position: absolute;
+  top: 50%;
+  background: #ddd;
+  content: "";
+  height: 1px;
+  width: 25%;
+}
+
+/*调整背景横线的左右距离*/
+.wrap text:before {
+  left: 50px;
+}
+
+.wrap text:after {
+  right: 50px;
+}
+
+.dimmm view {
+  padding: 0 50px;
+}
+
+.zhankai {
+  color: #000;
+  height: 30px;
+  position: relative;
+  bottom: -30px;
+  font-weight: unset;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0;
+  line-height: 0;
+}
+
+
+.gouwuche {
+  position: absolute;
+  bottom: 0;
+  width: 750rpx;
+  top: 40vh;
+  z-index: inherit;
+  background-color: rgb(255, 255, 255);
+}
+
+.navigator-hover {
+  background-color: transparent;
+}
+
+.zhanyailan {
+  box-sizing: border-box;
+  padding: 0 10px;
+  background-color: #f4f5f7;
+  height: 40px;
+  line-height: 40px;
+}
+
+.navigator-hover {
+  color: blue;
+}
+
+.touming {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 750rpx;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.tishuliang {
+  background-color: brown;
+  position: absolute;
+  top: -8px;
+  font-size: 10px;
+  color: #ffffff;
+  width: 25px;
+  height: 15px;
+  border-radius: 7.5px;
+  left: 60px;
+  text-align: center;
+}
+
+.concnt {
+  height: 50px;
+  margin: 0 20px;
+  border-bottom: 1px #afb2b5 solid;
+  line-height: 50px;
+
+}
+
+.concnt button {
+  margin-top: 15px;
+}
+
+.ll-yi text{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.lincon{
+  position: relative;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.bttons button {
+  width: 70px;
+  height: 30px;
+  font-size: 14px;
+  color: #000000;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 30px;
+  border-radius: 0;
+  font-weight: unset;
+}
+
+.bttons button:nth-child(1) {
+  background-color: #2977c5;
+  color: #ffffff;
+}
+
+.bttons button:nth-child(2) {
+  background-color: #ccecf7;
+  margin: 0 10px !important;
+}
+
+.bttons button:nth-child(3) {
+  background-color: #eaebed;
+}
+.jjk view{
+  width: 250rpx;
+  text-align: center;
+}
+
+.jjk view view:nth-child(1){
+  color: #afb2b5;
+  font-size: 12px;
+}
+
+.jjk view view:nth-child(2){
+  font-size: 20px;
+}
+.jjk view view:nth-child(2) text{
+  font-size: 12px;
+}
+
+.ytu{
+  width: 350rpx;
+  height: 100px;
+}

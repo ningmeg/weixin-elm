@@ -1,0 +1,326 @@
+<!-- pages/lists/lists.wxml -->
+
+<view class="flex top-yi">
+  <view class="flex" bindtap="tai">
+    <view>
+      <image class="img-xiao yuan-xiao" src="https://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg" style="margin-left: 20px;" mode="scaleToFill" />
+    </view>
+    <view class="flex" style="flex-wrap: wrap;">
+      <view class="flex" style="width: 750rpx;">
+        <view>
+          <image class="biaoqian" src="../../image/header/brand@2x.png" mode="scaleToFill" />
+        </view>
+        <view>
+          <text class="text-yi">粥品香坊（镇坪）</text>
+        </view>
+      </view>
+      <view style="width: 750rpx;">
+        <text class="text-yi zixiao">蜂鸟专送/38分钟送达</text>
+      </view>
+      <view class="flex">
+        <view>
+          <image class="biaozhi" src="../../image/header/decrease_1@2x.png" mode="scaleToFill" />
+        </view>
+        <view>
+          <text class="text-yi zixiao">在线支付满28减5</text>
+        </view>
+        <view>
+          <button class="tishi yuan-da">5个</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="flex box-yi">
+    <view style="margin-left: 10px;">
+      <image class="biaoq" src="../../image/header/bulletin@2x.png" mode="scaleToFill" />
+    </view>
+    <text style="font-size: 10px;line-height: 20px;" class="ziyans text-yi">粥品香坊其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深得消费者青睐，发展至今成为粥类的引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。</text>
+  </view>
+</view>
+
+<view class="page">
+
+  <mp-tabs tabs="{{tabs}}" tab-inactive-text-color="#afb2b5;" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabClick" bindchange="onChange" activeClass="tab-bar-title__selected" tabBarlnactiveTextColor="#2d3436" tab-active-text-color='#c0392b' tab-underline-color='#none' tab-class='tabs-yi'>
+    <block wx:for="{{tabs}}" wx:key="title">
+      <view class="tab-content" data-set="{{item}}" slot="tab-content-{{index}}">
+        <view class="page-section-spacing">
+          <scroll-view scroll-y="true" style="height:{{2*height}}rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+            <mp-vtabs vtabs="{{vtabs}}" tab-bar-line-color="#123" activeTab="{{activeTab}}" bindtabclick="onTabCLick" bindchange="onChange" class="test" wx:if="{{index==0}}">
+              <block wx:for="{{vtabs}}" wx:key="name">
+                <mp-vtabs-content style="overflow: hidden;" tabIndex="{{index}}">
+                  <view class="vtabs-content-item">
+                    <view class="bt-yi textdi">
+                      {{item.title}}
+                    </view>
+                    <view wx:for="{{item.lists}}" wx:for-item='items' wx:for-index='outerIndex' wx:key="index" wx:if="{{items.name}}" class="flex lists-yi" bind:tap="anaa" data-outer-index="{{outerIndex}}" data-inner-index="{{index}}">
+                      <view wx:if="{{items.img}}">
+                        <image style="width: 70px;height: 70px;" src="{{items.img}}" mode="scaleToFill" />
+                      </view>
+                      <view class="contae">
+                        <view class="text-da" wx:if="items.name" style="font-weight: bold;font-size: 16px;">
+                          {{items.name}}
+                        </view>
+                        <view wx:if="{{items.classification}}" class="textdi">
+                          {{items.classification}}
+                        </view>
+                        <view wx:if="{{items.sales||items.evaluation}}" class="textdi">
+                          <text>售出：{{items.sales+'份'}}</text> <text style="margin-left: 20px;">好评率:{{items.evaluation+'%'}}</text>
+                        </view>
+                        <view wx:if="{{items.presentPrice||items.OriginalPrice}}" class="flex">
+                          <text style="font-size: 18px;font-weight: bold;color: rgb(233, 14, 14);">￥{{items.OriginalPrice}}</text>
+                          <text wx:if="{{items.presentPrice}}" style="margin-left: 20px;font-size: 14px;text-decoration: line-through;" class="textdi">￥{{items.presentPrice}}</text>
+                          <view class="flex" style="position: absolute;right: 10px;">
+                            <button wx:if="{{items.gomai!=0}}" data-outer-index="{{outerIndex}}" data-inner-index="{{index}}" size="mini" catchtap='burttonyi' style="border: 2px #006aff solid;color: #006aff;line-height: 16px !important;" class="buttonxiaoyuan">-</button>
+                            <text style="width: 40px;text-align: center;">{{items.gomai}}</text>
+                            <button data-outer-index="{{outerIndex}}" data-inner-index="{{index}}" catchtap='burtton' style="background-color: #006aff;color: #ffffff;line-height: 20px !important;" class="buttonxiaoyuan">+</button>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </mp-vtabs-content>
+              </block>
+            </mp-vtabs>
+
+            <view wx:if="{{index==1}}">
+              <view class="flex" style="width: 750rpx; height: 160px;">
+
+                <view class="ll-yi" style="width: 230rpx;border-right: solid 1px #afb2b5;height: 120px;margin-top: 20px;">
+                  <text style="margin-top: 12px;font-size: 25px;color: chocolate;">3.9</text>
+                  <text>综合评价</text>
+                  <text class="textdi">高于周边商家69.2%</text>
+                </view>
+                <view style="height: 120px;margin-left: 20px;">
+                  <view class="flex" style="align-content: center;height: 40px;margin-top: 18px;">
+                    <text style="line-height: 40px;margin-right: 15px;">服务态度</text>
+                    <view class="flex">
+                      <image wx:for="{{4}}" wx:key="index" class="biaozhi lincon" src="../../image/star/star24_on@2x.png" mode="scaleToFill" />
+                      <image wx:for="{{1}}" wx:key="index" class="biaozhi lincon" src="../../image/star/star24_off@2x.png" mode="scaleToFill" />
+                    </view>
+                    <text style="line-height: 40px;margin-left: 15px;">3.9</text>
+                  </view>
+                  <view class="flex " style="align-content: center;height: 40px;">
+                    <text style="line-height: 40px;margin-right: 15px;">服务态度</text>
+                    <view class="flex">
+                      <image wx:for="{{4}}" wx:key="index" class="biaozhi lincon" src="../../image/star/star24_on@2x.png" mode="scaleToFill" />
+                      <image wx:for="{{1}}" wx:key="index" class="biaozhi lincon" src="../../image/star/star24_off@2x.png" mode="scaleToFill" />
+                    </view>
+                    <text style="line-height: 40px;margin-left: 15px;">4.0 </text>
+                  </view>
+                  <view class="flex" style="align-content: center;height: 40px;">
+                    <text style="line-height: 40px;">送达时间</text>
+                    <text style="color: #afb2b5;line-height: 40px;margin-left: 15px;">44分钟</text>
+                  </view>
+                </view>
+              </view>
+              <view style="height: 20px; background-color: #f4f5f7;"></view>
+              <view style="margin: 0 10px;">
+                <view style="margin-top: 20px;" class="bttons flex">
+                  <button>全部<text style="margin-left: 5px;" class="textdi">{{pingjiasum}}</text></button>
+                  <button>推荐<text style="margin-left: 5px;" class="textdi">{{haopingsum}}</text></button>
+                  <button>吐槽<text style="margin-left: 5px;" class="textdi">{{chapingsum}}</text></button>
+                </view>
+                <view class="flex" style="height: 70px;padding-top: 30px;box-sizing: border-box;">
+                  <view style="width: 25px;height: 25px;border-radius: 50%;background-color: #b6b9be;text-align: center;color: #ffffff;">✓</view>
+                  <text class="textdi" style="height: 25px;line-height: 25px;margin-left: 10px;">只看有内容的评价</text>
+                </view>
+                <view style="width: 750rpx; height: 1px;background-color: #e9e9e9;margin-left: -10px;"></view>
+
+                <view wx:for="{{dianpupingjia}}" wx:key="index" class="flex" style="height: 120px;flex-wrap: wrap;align-content: center;">
+                  <view class="flex textdi" style="justify-content: space-between;width: 100%;">
+                    <view class="flex">
+                      <image class="biaoqian" style="width: 30px;border-radius: 50%;height: 30px;" src="{{item.touxiang}}" />
+                      <view>
+                        <text style="width: 100%;">{{item.yonghu}}</text>
+                        <view>
+                          <view class="flex">
+                            <image wx:for="{{item.xiai}}" wx:key="index" class="biaozhi lincon" style="width: 10px;height: 10px;margin-top: 5px;margin-right: 5px;" src="../../image/star/star24_on@2x.png" mode="scaleToFill" />
+                            <image wx:for="{{5-item.xiai}}" wx:key="index" class="biaozhi lincon" style="width: 10px;height: 10px;margin-top: 5px;margin-right: 5px;" src="../../image/star/star24_off@2x.png" mode="scaleToFill" />
+                            <text class="textdi" style="margin-left: 10px;">{{item.shi}}分钟发送</text>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                    <view><text>{{item.riqi}}</text><text>{{item.shijian}}</text>
+                    </view>
+                  </view>
+
+                  <view class="flex" style="margin-left: 40px;width: 750rpx;">
+                    <text>{{item.pingjia}}</text>
+                  </view>
+
+                  <view class="flex" style="margin-left: 40px;">
+                    <image class="biaoqian" style="width: 15px;margin-top: 8px;" wx:if="{{item.aa==false}}" src="../../image/tu/差评.png" mode="" />
+                    <image class="biaoqian" style="width: 15px;;margin-top: 8px;" wx:else="{{item.aa==true}}" src="../../image/tu/点赞.png" mode="" />
+                    <view wx:for="{{item.bb}}" wx:for-item="items" wx:key="ondex">
+                      <text class="textdi" style="margin-right: 10px;border: 1px #afb2b5 solid;">{{items}}</text>
+                    </view>
+                  </view>
+
+                </view>
+              </view>
+            </view>
+
+            <view style="margin: 0 10px;" wx:if="{{index==2}}">
+              <view class="flex" style="margin: 15px ;">
+                <view>
+                  <text>品牌粥品香坊（镇坪）</text>
+                  <view class="flex">
+                    <view style="text-align: center;">
+                      <image wx:for="{{4}}" wx:key="index" class="biaozhi" src="../../image/star/star24_on@2x.png" mode="scaleToFill" />
+                      <image wx:for="{{1}}" wx:key="index" class="biaozhi" src="../../image/star/star24_off@2x.png" mode="scaleToFill" />
+                    </view>
+                    <text class="textdi" style="line-height: 25px;">(661)</text><text class="textdi" style="line-height: 25px;">月售690单</text>
+                  </view>
+                </view>
+                <view style="position: absolute;right: 10px;">
+                  <image style="width: 20px;height: 20px;margin-left: 14px;" src="../../image/tu/喜欢.png" mode="" />
+                  <view style="width: 100%;">已收藏</view>
+                </view>
+              </view>
+              <view class="flex jjk" style="margin-bottom: 10px;">
+                <view>
+                  <view>起送价</view>
+                  <view>20<text>元</text></view>
+                </view>
+                <view>
+                  <view>商家配送</view>
+                  <view>4 <text>元</text></view>
+                </view>
+                <view>
+                  <view>平局配送时间</view>
+                  <view>39<text>分钟</text> </view>
+                </view>
+              </view>
+              <view style="height: 20px; background-color: #f4f5f7;"></view>
+              <view>
+                <text>公告与活动</text>
+                <view style="margin: 0 10px;">
+                  <view style="border-bottom: 1px #afb2b5 solid;padding-bottom: 10px;">
+                    <text style="color: crimson; font-size: 14px;">彩汽三为农远丁十可F牛法，+我代tF二三，上世H安土大h屈先魁i州发，匹千4女器.添1历的▣队，岩区平今k发了领后k.足匹会村.回l会拉岛</text>
+                  </view>
+                </view>
+                <view wx:for="{{mmonn}}" wx:key="index" style="margin: 0 20px;height: 50px;border-bottom: 1px solid #afb2b5;">
+                  <view style="padding-top: 12px;">
+                    <image class="biaozhi" src="{{item.img}}" mode="" />{{item.text}}
+                  </view>
+                </view>
+              </view>
+              <view style="height: 20px; background-color: #f4f5f7;"></view>
+              <view style="margin: 0 10px;">
+                <text style="display: inline-block; padding: 10px 0;">商家实景</text>
+                <view class="flex">
+                  <image wx:for="{{imge}}" class="ytu" wx:key="index" src="{{item}}" />
+                </view>
+              </view>
+              <view style="height: 20px; background-color: #f4f5f7;"></view>
+              <view>
+                <text style="display: inline-block; padding: 10px 0;">商家信息</text>
+                <view style="margin: 0 10px;">
+                  <text style="display: inline-block; padding: 10px 0;border-bottom: solid 1px #afb2b5;width: 100%;" wx:for="{{shanjiaxx}}" wx:key="index">{{item}}</text>
+                </view>
+              </view>
+            </view>
+
+            <view class="scrollSpase"></view>
+          </scroll-view>
+        </view>
+      </view>
+    </block>
+  </mp-tabs>
+</view>
+
+<view class="base flex">
+  <view>
+    <view class="buttonyuan">
+      <image style="position: relative; top: 19rpx; left: 19rpx" class="gwuche" src="../../image/购物车.png" mode="" />
+    </view>
+    <view wx:if="{{gomaisum!=0}}" class="tishuliang">{{gomaisum}}</view>
+  </view>
+  <view>
+    <text class="text-yi">￥{{sum}}</text>
+  </view>
+  <view>
+    <text class="text-yi">另需配送费￥4</text>
+  </view>
+  <view>
+    <button class="button-er">￥20元起送</button>
+  </view>
+</view>
+
+<view wx:if="{{zuan}}" class="dingbu flex">
+  <view class="dimmm">
+    <view style="text-align: center;margin-top: 50px;">
+      <text class="text-yi">粥品香坊（镇坪）</text>
+    </view>
+    <view style="text-align: center;">
+      <image wx:for="{{4}}" wx:key="index" class="biaozhi" src="../../image/star/star24_on@2x.png" mode="scaleToFill" />
+      <image wx:for="{{1}}" wx:key="index" class="biaozhi" src="../../image/star/star24_off@2x.png" mode="scaleToFill" />
+    </view>
+    <view class="wrap">
+      <text>优惠信息</text>
+    </view>
+    <view style="font-size: 14px;margin: 30px 0 10px 0;">
+      <view>
+        <image class="biaozhi" src="../../image/seller/decrease_4@2x.png" mode="scaleToFill" />
+        <text class="text-yi">在线支付满28减5，满50减10</text>
+      </view>
+      <view>
+        <image class="biaozhi" src="../../image/seller/discount_4@2x.png" mode="scaleToFill" />
+        <text class="text-yi">单人精彩赛</text>
+      </view>
+      <view>
+        <image class="biaozhi" src="../../image/seller/guarantee_4@2x.png" mode="scaleToFill" />
+        <text class="text-yi">清肺雪梨汤8折抢购</text>
+      </view>
+      <view>
+        <image class="biaozhi" src="../../image/seller/invoice_4@2x.png" mode="scaleToFill" />
+        <text class="text-yi">特价饮品八折抢购</text>
+      </view>
+      <view>
+        <image class="biaozhi" src="../../image/seller/special_4@2x.png" mode="scaleToFill" />
+        <text class="text-yi">单人特色套餐</text>
+      </view>
+    </view>
+    <view class="wrap">
+      <text>商家公告</text>
+    </view>
+    <view>
+      <text class="text-yi" style="font-size: 14px;">
+        粥品香坊其烹饪粥料的秘方源于中国干年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、·添加的良心品质深的消费者青睐，发展至今成为粥类引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。
+      </text>
+    </view>
+  </view>
+  <button bindtap="guanbi">X</button>
+</view>
+
+<button wx:if="{{shipwupingjia}}" class="weui-btn zhankai" bindtap="open"><span>︿</span></button>
+
+<view class="touming" bindtap="opan" wx:if="{{show}}">
+  <view class="gouwuche">
+    <view class="flex zhanyailan" style="justify-content: space-between;">
+      <text>购物车</text>
+      <text class="navigator-hover" catchtap="qinkuo">清空</text>
+    </view>
+    <scroll-view scroll-y="true" style="height:{{xiaoheight}}px;"></scroll-view>
+    <view class="concnt flex" wx:for="{{gouwus}}" wx:key="index" wx:if="{{item.gomai!=0}}">
+      <view class="flex">
+        <view style="font-weight: bold;">
+          {{item.name}}
+        </view>
+
+      </view>
+      <view>
+        <view class="flex" style="position: absolute;right: 20px;">
+          <view style="font-weight: bold;color: red;margin-right: 20px;">
+            <text>￥{{item.OriginalPrice}}</text>
+          </view>
+          <button wx:if="{{item.gomai!=0}}" data-inner-index="{{index}}" size="mini" catchtap='jianXiao' style="border: 2px #006aff solid;color: #006aff;line-height: 16px !important;" class="buttonxiaoyuan">-</button>
+          <text style="width: 40px;text-align: center;">{{item.gomai}}</text>
+          <button data-outer-index="{{outerIndex}}" data-inner-index="{{index}}" catchtap='jiaxiao' style="background-color: #006aff;color: #ffffff;line-height: 20px !important;" class="buttonxiaoyuan">+</button>
+        </view>
+      </view>
+    </view>
+    <view style="position: absolute;bottom: 0;height: 70px;width: 750rpx;"></view>
+  </view>
+</view>

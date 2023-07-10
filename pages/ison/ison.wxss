@@ -1,0 +1,102 @@
+/* pages/ison/ison.wxss */
+.textdi {
+  font-size: 10px;
+  color: #afb2b5;
+}
+.flex {
+  display: flex;
+}
+.mvmaa {
+  padding: 0;
+  width: 80px !important;
+  height: 20px !important;
+  background-color: #2977c5;
+  color: #ffffff;
+  font-weight: unset;
+  font-size: 12px;
+  border-radius: 10px;
+  line-height: 20px;
+}
+
+
+.bttons button {
+  width: 70px;
+  height: 30px;
+  font-size: 14px;
+  color: #000000;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 30px;
+  border-radius: 0;
+  font-weight: unset;
+}
+
+.bttons button:nth-child(1) {
+  background-color: #2977c5;
+  color: #ffffff;
+}
+
+.bttons button:nth-child(2) {
+  background-color: #ccecf7;
+  margin: 0 10px !important;
+}
+
+.bttons button:nth-child(3) {
+  background-color: #eaebed;
+}
+.biaoqian {
+  width: 25px;
+  height: 15px;
+}
+.base {
+  width: 750rpx;
+  height: 60px;
+  background-color: #141c27;
+  position: absolute;
+  bottom: 0;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.buttonyuan {
+  width: 50px !important;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2977c5;
+  margin-top: -25px;
+  align-self: flex-start;
+  border: 5px #000 solid;
+}
+.gwuche {
+  width: 30px;
+  height: 30px;
+}
+.tishuliang {
+  background-color: brown;
+  position: absolute;
+  top: -8px;
+  font-size: 10px;
+  color: #ffffff;
+  width: 25px;
+  height: 15px;
+  border-radius: 7.5px;
+  left: 60px;
+  text-align: center;
+}
+.text-yi {
+  color: aliceblue;
+}
+.button-er {
+  width: 135px !important;
+  height: 60px;
+  background-color: #2b343d;
+  color: #93979b;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 50px;
+  align-self: flex-start;
+  margin-right: 20px !important;
+}

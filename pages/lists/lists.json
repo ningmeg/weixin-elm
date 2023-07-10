@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "mp-tabs": "@miniprogram-component-plus/tabs",
+    "mp-vtabs": "@miniprogram-component-plus/vtabs",
+    "mp-vtabs-content": "@miniprogram-component-plus/vtabs-content"
+  },
+
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "详情页",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}
